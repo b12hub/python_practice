@@ -6,6 +6,7 @@ from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from openpyxl import Workbook
 from time import strftime
+from openpyxl.styles import Font
 
 OUTPUT_DIR = "invoices"
 timestamp = strftime("%Y-%m-%d %H:%M:%S")
