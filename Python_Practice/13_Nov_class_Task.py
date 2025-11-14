@@ -112,6 +112,7 @@ class HTMLInvoiceGenerator(InvoiceGenerator):
             <table>
                 <tr><th>Item</th><th>Price ($)</th></tr>
         """
+
         for item, price in self.items.items():
             html_content += f"<tr><td>{item}</td><td>{price:.2f}</td></tr>"
         html_content += f"<tr><td>Total</td><td>{self.calculate_total():.2f}</td></tr>"
@@ -136,7 +137,7 @@ class InvoiceManager:
 
 if __name__ == "__main__":
     invoice_manager = InvoiceManager()
-    items = {"Apples": 1.5, "Bananas": 2.0}
+    items = {"Apples": 1.5, "Bananas":5.0}
     invoice_manager.add_generator(PDFInvoiceGenerator("John Doe", items))
     invoice_manager.add_generator(ExcelInvoiceGenerator("John Doe", items))
     invoice_manager.add_generator(HTMLInvoiceGenerator("John Doe", items))
